@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebPokedex - Character Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="home">
+    <div class="container">
+        <h1>🐉 WebPokedex - Character Viewer</h1>
+        <p>Welcome! Enter a character name to view character information.</p>
+        <div class="search-box">
+            <input type="text" id="characterName" placeholder="Enter character name" value="Goku">
+            <button onclick="fetchCharacter()">Search</button>
+        </div>
+        <div class="info">
+            <p>Example names: Goku, Vegeta, Trunks</p>
+        </div>
+    </div>
+    <script>
+        function fetchCharacter() {
+            const name = document.getElementById('characterName').value;
+            if (name) {
+                window.location.href = '/character/' + name;
+            }
+        }
+        document.getElementById('characterName').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                fetchCharacter();
+            }
+        });
+    </script>
+</body>
+</html>

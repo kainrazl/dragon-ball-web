@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebPokedex - {{ character.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="character">
+    <div class="container">
+        <a href="/" class="back-button">← Back to Search</a>
+        
+        <div class="header">
+            <img src="{{ character.image }}" alt="{{ character.name }}">
+            <div class="header-info">
+                <h1>{{ character.name }}</h1>
+                <p>{{ character.race }}</p>
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">Gender</div>
+                <div class="info-value">{{ character.gender }}</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Affiliation</div>
+                <div class="info-value">{{ character.affiliation }}</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Ki</div>
+                <div class="info-value">{{ character.ki }}</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Max Ki</div>
+                <div class="info-value">{{ character.maxKi }}</div>
+            </div>
+        </div>
+        
+        <div class="description">
+            <div class="section-title">Description</div>
+            <p>{{ character.description }}</p>
+        </div>
+        
+        {% if character.originPlanet %}
+        <div class="origin-planet">
+            <div class="section-title">Origin Planet: {{ character.originPlanet.name }}</div>
+            <p>{{ character.originPlanet.description }}</p>
+            <img src="{{ character.originPlanet.image }}" alt="{{ character.originPlanet.name }}">
+        </div>
+        {% endif %}
+        {% if character.transformations %}
+        <div class="section-title">Transformations</div>
+        <div class="transformations">
+            {% for transformation in character.transformations %}
+            <div class="transformation">
+                <img src="{{ transformation.image }}" alt="{{ transformation.name }}">
+                <div class="transformation-name">{{ transformation.name }}</div>
+                <div class="transformation-ki">Ki: {{ transformation.ki }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
