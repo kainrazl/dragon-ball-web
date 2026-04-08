@@ -8,15 +8,15 @@ WebDragonBall is a simple yet powerful web application that allows users to sear
 
 ## Features
 
-- 🔍 **Character Search**: Search for any Dragon Ball character by name
-- 📊 **Character Details**: View comprehensive information including:
+- **Character Search**: Search for any Dragon Ball character by name
+- **Character Details**: View comprehensive information including:
   - Ki and Max Ki levels
   - Race and gender
   - Character description
   - Origin planet and transformations
   - Character image
-- 🎨 **Responsive UI**: Clean and user-friendly interface
-- ⚡ **Real-time Data**: Fetches current data from the Dragon Ball API
+- **Responsive UI**: Clean and user-friendly interface
+- **Real-time Data**: Fetches current data from the Dragon Ball API
 
 ## Project Structure
 
@@ -70,7 +70,7 @@ WebDragonBall/
 2. **Open in browser**
    - Navigate to `http://localhost:5000` in your web browser
 
-3. **Search for characters**
+3. **Search for characters by name (In spanish)**
    - Use the search functionality to look up Dragon Ball characters
    - View detailed information about selected characters
 
